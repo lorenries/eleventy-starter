@@ -1,0 +1,6 @@
+{
+  "title": "Eleventy Starter",
+  "description": "An Eleventy starter with Tailwind and cache busting js/css builds",
+  "lang": "en",
+  "locale": "en_us"
+}

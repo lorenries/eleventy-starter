@@ -1,0 +1,33 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+/**
+ * Disable animations if the user has turned on the a11y option for reduced motion due to 
+ * vestibular disorders etc.
+ * 
+ * @link https://css-tricks.com/introduction-reduced-motion-media-query/#article-header-id-3
+ */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01s !important;
+    transition-duration: 0.01s !important;
+  }
+}
+
+/**
+ * ::selection selector: color, background, cursor, and outline.
+ */
+::selection {
+  @apply bg-yellow-300 text-black;
+}
+
+/**
+ * Selectively disable the default focus style by selecting for the case when the polyfill 
+ * is loaded and [data-focus-visible-added] attribute is not applied to the element:
+ *
+ * @link https://github.com/WICG/focus-visible#2-update-your-css
+ */
+.js-focus-visible :focus:not([data-focus-visible-added]) {
+  @apply outline-none;
+}
